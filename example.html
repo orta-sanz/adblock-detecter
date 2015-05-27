@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AdBlock Detecter - Example</title>
+</head>
+<body>
+	<i>This example will only works in a server-side environment.</i>
+
+	<h3 id="label"></h3>
+</body>
+
+<script src="jquery.min.js"></script>
+<script src="adblockDetecter.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	var label = document.getElementById('label');
+	if (AdBlockDetecter.isActive()) {
+		label.innerHTML = "AdBlock is active";
+	}
+	else {
+		label.innerHTML = "AdBlock is NOT active";
+	}
+</script>
+
+</html>
