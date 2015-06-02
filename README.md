@@ -31,5 +31,4 @@ AdBlockDetecter.isActive({
 
 ##Pending
 
- - Remove jQuery dependence.
  - Refactor.

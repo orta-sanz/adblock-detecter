@@ -1,7 +1,7 @@
 ;(function($) {
 
 	var defaults = {
-		id: 'publicidad'
+		id: 'publicidad',
 		container: 'body'
 	}
 
@@ -15,6 +15,8 @@
 		}));
 
 		var fakeAdDisplay = $('#publicidad').css('display');
+		$('#'+options.id).remove();
+
 		if(fakeAdDisplay === 'none') return true;
 		else return false;
 	};
