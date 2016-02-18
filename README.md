@@ -7,7 +7,6 @@ First you need to include `adblockDetecter.js` on your page, after that you can 
 
 ### Example
 ```html
-<script src="jquery.js"></script>
 <script src="adblockDetecter.js"></script>
 <script>
 	$(document).ready(function() {
@@ -29,6 +28,5 @@ AdBlockDetecter.isActive({
 ## How it works
 **AdBlockDetecter** is a global function so you can call it wherever you want, after call the **.isActive()** function the plugin creates a fakeAd element and then we check if the element has been hidden or not.
 
-##Pending
-
- - Refactor.
+## Not working for you?
+Try to change the default parameters, send an ID of **advertising** or **ads** for testing.
