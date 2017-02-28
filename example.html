@@ -5,20 +5,21 @@
 </head>
 <body>
 	<i>This example will only works in a server-side environment.</i>
-
-	<h3 id="label"></h3>
+	<h3 id="label">Loading ...</h3>
 </body>
 
 <script src="adblockDetecter.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-	var label = document.getElementById('label');
-	if (AdBlockDetecter.isActive()) {
-		label.innerHTML = "AdBlock is active";
-	}
-	else {
-		label.innerHTML = "AdBlock is NOT active";
-	}
+	var label = document.getElementById('label')
+
+	setTimeout(function() {
+		if (AdBlockDetecter.isActive()) {
+			label.innerHTML = 'AdBlock is active'
+		} else {
+			label.innerHTML = 'AdBlock is NOT active'
+		}
+	}, 1000)
 </script>
 
 </html>

@@ -21,12 +21,9 @@
 		var container = document.getElementsByTagName(options.container)[0]
 		container.appendChild(fakeAd)
 
-		setTimeout(function() {
-			var fakeAdStyle   = window.getComputedStyle(document.getElementsByClassName(options.class)[0])
-			var fakeAdDisplay = fakeAdStyle.getPropertyValue('display')
+		var fakeAdStyle = window.getComputedStyle(document.getElementsByClassName(options.class)[0])
 
-			return fakeAdDisplay === 'none'
-		}, 1000)
+		return fakeAdStyle.getPropertyValue('display') === 'none'
 	};
 
 	if(window.AdBlockDetecter === undefined) {
