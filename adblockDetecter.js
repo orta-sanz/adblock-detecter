@@ -1,7 +1,7 @@
 ;(function() {
 
 	var defaults = {
-		class: 'add',
+		class: 'framead',
 		container: 'body'
 	}
 
@@ -18,13 +18,15 @@
 		var fakeAd = document.createElement('P')
 		fakeAd.className = options.class
 
-		var container = document.getElementsByTagName(options.container)
-		container[0].appendChild(fakeAd)
+		var container = document.getElementsByTagName(options.container)[0]
+		container.appendChild(fakeAd)
 
-		var fakeAdStyle   = window.getComputedStyle(document.getElementsByClassName(options.class)[0])
-		var fakeAdDisplay = fakeAdStyle.getPropertyValue('display')
+		setTimeout(function() {
+			var fakeAdStyle   = window.getComputedStyle(document.getElementsByClassName(options.class)[0])
+			var fakeAdDisplay = fakeAdStyle.getPropertyValue('display')
 
-		return fakeAdDisplay === 'none'
+			return fakeAdDisplay === 'none'
+		}, 1000)
 	};
 
 	if(window.AdBlockDetecter === undefined) {
