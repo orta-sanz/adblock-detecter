@@ -1,34 +1,32 @@
 ;(function() {
 
 	var defaults = {
-		id: 'publicidad',
+		class: 'framead',
 		container: 'body'
 	}
 
-	var AdBlockDetecter = function() {};
+	var AdBlockDetecter = function() {}
 
 	AdBlockDetecter.prototype.isActive = function(params) {
 		var options = params
 			? {
-				id: params.id ? params.id : defaults.id,
+				class: params.class ? params.class : defaults.class,
 				container : params.container ? params.container : defaults.container
 			  }
-			: defaults;
+			: defaults
 
-		var fakeAd = document.createElement('P');
-		fakeAd.id = options.id;
+		var fakeAd = document.createElement('P')
+		fakeAd.className = options.class
 
-		var container = document.getElementsByTagName(options.container);
-		container[0].appendChild(fakeAd);
+		var container = document.getElementsByTagName(options.container)[0]
+		container.appendChild(fakeAd)
 
-		var fakeAdStyle   = window.getComputedStyle(document.getElementById(options.id));
-		var fakeAdDisplay = fakeAdStyle.getPropertyValue('display');
+		var fakeAdStyle = window.getComputedStyle(document.getElementsByClassName(options.class)[0])
 
-		if(fakeAdDisplay === 'none') return true;
-		else return false;
+		return fakeAdStyle.getPropertyValue('display') === 'none'
 	};
 
 	if(window.AdBlockDetecter === undefined) {
-		window.AdBlockDetecter = new AdBlockDetecter();
-	};
-})();
+		window.AdBlockDetecter = new AdBlockDetecter()
+	}
+})()
